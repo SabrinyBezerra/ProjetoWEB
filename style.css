@@ -1,0 +1,67 @@
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 60%;
+  width: 40%;
+}
+
+canvas{
+  position: relative;
+  left: 15%;
+}
+
+.sidenav{
+  font-size: 50px !important;
+  color: white ;
+  background-color: #E8E8E8 !important;
+  width: 290px !important;
+  margin-top: 0px !important;
+}
+
+#containerBR {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#mapBR{
+  position: relative;
+  width: 900px;
+  height: 600px;
+  top:0px;
+  bottom: 0px;  
+  left: 0px;
+  right: 0px;
+
+}
+
+#mapEst{
+  position: relative;
+  width: 700px;
+  height: 300px;
+  top:0px;
+  bottom: 0px;  
+  left: 0px;
+  right: 0px;
+}
+
+.modal{
+  min-width: 75% !important;
+}
+
+.center-preloader{
+  display: block;
+  position: relative;
+  margin-top: 20%;
+  margin-left: 17%;
+  overflow-y: none; 
+}
+
+.center-preloader-est{
+  display: block;
+  position: relative;
+  top: 45%;
+  left: 45%; 
+  overflow-y: none;
+}
