@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Dashboard</title>
+                
+        <!-- Estilo css personalizado  -->
+        <link rel="stylesheet" href="css/app.css">
+          
+    </head>
+    <body ng-controller="systemCtrl">
+
+      <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <a class="waves-effect waves-light btn" ng-click="gerarSexoEstado()">Sexo</a>
+        <a class="waves-effect waves-light btn" ng-click="gerarBrEstado()">BR</a>
+        <!--  Preloader -->
+        <br/>
+        <div ng-if="requisicaoEst" class="preloader-wrapper big active center-preloader-est">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+        </div>
+        <!---->
+        <div id="mapEst">
+            <canvas id="myChartEstado" ></canvas>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+      </div>
+    </div>
+
+        <!-- vizualização das páginas -->
+        <ul id="slide-out" class="sidenav sidenav-fixed">
+                <li><a style="text-align: center" id="nome-projeto">Análise dos Dados Abertos</a></li>
+                <li><a style="text-align: center">do Governo Federal</a></li>
+                <li><div class="divider"></div></li>
+                <li><a class="waves-effect" ng-click="gerarMapaBrasil()">Estados</a></li>
+                <li><a class="waves-effect" ng-click="">Acidentes por Regiões</a></li>
+                <li><a class="waves-effect" ng-click="gerarUF()">Número de Acidentes por UF</a></li>
+                <li><a class="waves-effect" ng-click="gerarDia()">Número de Acidentes por Dia</a></li>
+                <li><a class="waves-effect" ng-click="gerarSexo()">Número de Acidentes por Sexo</a></li>
+                <li><a class="waves-effect" ng-click="">Sobre</a></li>
+              </ul>
+              
+              <center>
+              <main>
+                    <div ng-if="requisicao" class="preloader-wrapper big active center-preloader">
+                            <div class="spinner-layer spinner-blue-only">
+                              <div class="circle-clipper left">
+                                <div class="circle"></div>
+                              </div><div class="gap-patch">
+                                <div class="circle"></div>
+                              </div><div class="circle-clipper right">
+                                <div class="circle"></div>
+                              </div>
+                            </div>
+                        </div>
+                   <div class="chart-container" id="chart-container" style="position: relative; height:40vh; width:70vw" >
+                        <canvas id="myChart" ></canvas>
+                        <div id="legend" ></div>
+                        <div id="mapBR" >
+                          <div id="containerBR"></div>
+                        </div>
+                   </div> 
+              </main>
+            </center>
+        
+                
+        <!-- Importando jQuery e seus componentes -->
+        <script src="plugins/jquery/jquery-3.3.1.min.js"></script>
+        
+        <!-- Importando materialize -->
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script src="plugins/materialize/init.js"></script>
+        
+        <!-- Chartjs -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-map.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/geodata/countries/brazil/brazil.js"></script>
+        
+        <!-- Importando angular e seus derivados -->
+        <script src="plugins/angular/angular.min.js"></script>
+        <script src="plugins/angular/ui-router.min.js"></script>
+        <script src="plugins/angular/angular-chart.min.js"></script>
+        <script src="plugins/angular/angular-anyChart.js"></script>
+                
+        <!-- Importando componentes personalizados do angular -->
+        <script src="js/app.js"></script>
+        <script src="js/services/systemService.js"></script>
+        <script src="js/controllers/systemController.js"></script>
+             
+    </body>
+</html>
